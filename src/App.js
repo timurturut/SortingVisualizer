@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import  SortingVisualizer  from './SortingVisualizer/SortingVisualizer';
+import LeftBar from './LeftBar/LeftBar';
+import {  useState ,  } from 'react';
 
 function App() {
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState('');
+  const [sortButton, setSortButton] = useState('');
+  const [newArray, setNewArray] = useState(false);
+  const [hideButton, setHideButton] = useState(false);
+
+
+
+
+  // useEffect(() => {
+  //   console.log(selectedAlgorithm);
+  // },);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='App'>
+        <LeftBar  newArray = {newArray} 
+                  setNewArray={setNewArray} 
+                  setSelectedAlgorithm={setSelectedAlgorithm} 
+                  sortButton = {sortButton} 
+                  setSortButton = {setSortButton}
+                  hideButton= {hideButton}></LeftBar>
+        <SortingVisualizer 
+                  newArray = {newArray} 
+                  setNewArray={setNewArray} 
+                  selectedAlgorithm={selectedAlgorithm} 
+                  sortButton = {sortButton} 
+                  setSortButton = {setSortButton}
+                  setHideButton = {setHideButton}></SortingVisualizer>
+      </div>
   );
 }
 
