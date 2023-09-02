@@ -1,0 +1,23 @@
+.leftContainer {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFFFE8;
+  }
+.arrayContainer{
+    display: grid;
+    width: 70%;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(90,1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.arrayBar{
+    width: 100%;
+    margin: 0 1px;
+    background-color: #DF7857;
+    align-self: end;
+}
