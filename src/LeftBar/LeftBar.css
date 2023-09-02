@@ -1,7 +1,9 @@
 .container{
     display: grid;
     grid-template-columns: 1fr 2fr;
+  
 }
+
 
 #leftBar{
     display: grid;
@@ -85,4 +87,19 @@ button:hover{
 
 #sortButton{
     display: none;
+}
+
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 14px;
+    }
+
+    h2{
+        font-size: 12px;
+    }
+
+    .button{
+        font-size: 10px
+    }
 }
