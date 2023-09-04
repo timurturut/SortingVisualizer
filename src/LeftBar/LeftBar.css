@@ -21,7 +21,7 @@
 
 
     height: 100vh;
-    background-color: #A4BE7B;
+    background-color: #313866;
     color: white;
 }
 
@@ -42,7 +42,7 @@ body{
     cursor: pointer;
     pointer-events: none;
     width: fit-content;
-    color: #DF7857;
+    color: #EC53B0;
 }
 
 .button{
@@ -53,7 +53,7 @@ body{
     height: fit-content;
 }
 .button:hover{
-    color: #DF7857;
+    color: #EC53B0;
     
 }
 
@@ -64,7 +64,7 @@ body{
 button{
     width: 100px;
     height: 50px;
-    background-color: #DF7857;
+    background-color: #EC53B0;
     color: white;
     border-radius: 15px;
     border: none;
@@ -72,7 +72,7 @@ button{
     /* margin: 50px; */
 }
 button:hover{
-     background-color: #e1673e;
+     background-color: #e9329f;
 }
 
 .divider {

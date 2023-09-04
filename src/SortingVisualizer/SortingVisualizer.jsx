@@ -5,12 +5,11 @@ import * as SortingAlgorithms from '../sortingAlgorithms/sortingAlgorithms';
 export default function SortingVisualizer({selectedAlgorithm , sortButton , setSortButton , newArray , setNewArray , setHideButton , sizeVal ,setSizeVal}) {
     const [array, setArray] = useState([]);
 
-    const PRIMARY_COLOR = '#DF7857';
-    const SECONDARY_COLOR = '#395144' 
-    const THIRD_COLOR = '#4E6C50';
-    const FINAL_GREEN = '#AACB73'
-    const ARRAY_SIZE = 85
-
+    const PRIMARY_COLOR = '#EC53B0';
+    const SECONDARY_COLOR = '#FDE5EC' 
+    const THIRD_COLOR = '#FDE5EC';
+    const FINAL_GREEN = '#6FE7DB';
+    const ARRAY_SIZE = 85;
 
    
     useEffect(() => {

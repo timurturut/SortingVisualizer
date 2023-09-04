@@ -3,7 +3,7 @@
     justify-items: center;
     align-items: center;
     height: 100vh;
-    background-color: #FFFFE8;
+    background-color: #504099;
   }
 .arrayContainer{
     display: grid;
@@ -18,6 +18,6 @@
 .arrayBar{
     width: 100%;
     margin: 0 1px;
-    background-color: #DF7857;
+    background-color: #EC53B0;
     align-self: end;
 }
