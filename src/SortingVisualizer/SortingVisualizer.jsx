@@ -9,7 +9,24 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
     const SECONDARY_COLOR = '#FDE5EC' 
     const THIRD_COLOR = '#FDE5EC';
     const FINAL_GREEN = '#6FE7DB';
-    const ARRAY_SIZE = 85;
+    const [arraySize, setArraySize] = useState(85);  // default size is 85
+
+
+    function getWindowWidth() {
+        return window.innerWidth;
+      }
+      
+
+      useEffect(() => {
+        const width = getWindowWidth();
+      
+        if (width < 499) {
+          // If the window width is less than 400 pixels, set the array size to 60.
+          const newSize = 50;
+          setArraySize(newSize);  // You'd need to create the `setArraySize` state updater function.
+        }
+      }, []);
+      
 
    
     useEffect(() => {
@@ -58,12 +75,12 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
             }
         }, 0); // You can adjust the delay if needed
       
-    }, [newArray]);
+    }, [newArray,arraySize]);
 
     function resetArray() {
         const newArray = [];
-        for (let i = 0; i < ARRAY_SIZE; i++) {
-            newArray.push(randomIntFromInterval(5, 600));
+        for (let i = 0; i < arraySize; i++) {
+            newArray.push(randomIntFromInterval(5, 75));
         }
         setArray(newArray);
     }
@@ -250,9 +267,9 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
 
     return (
         <div className='leftContainer'>
-            <div className="arrayContainer"  style={{gridTemplateColumns: `repeat(${ARRAY_SIZE}, 1fr)`}}>
+            <div className="arrayContainer"  style={{gridTemplateColumns: `repeat(${arraySize}, 1fr)`}}>
                 {array.map((value, idx) => (
-                    <div  className="arrayBar" key={idx} style={{ height: value + 'px' }}>
+                    <div  className="arrayBar" key={idx} style={{ height: value + 'vh' }}>
                     </div>
                 ))}
             </div>
