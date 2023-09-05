@@ -4,12 +4,12 @@ import * as SortingAlgorithms from '../sortingAlgorithms/sortingAlgorithms';
 
 export default function SortingVisualizer({selectedAlgorithm , sortButton , setSortButton , newArray , setNewArray , setHideButton , sizeVal ,setSizeVal}) {
     const [array, setArray] = useState([]);
+    const [arraySize, setArraySize] = useState(60);
 
     const PRIMARY_COLOR = '#EC53B0';
     const SECONDARY_COLOR = '#FDE5EC' 
     const THIRD_COLOR = '#FDE5EC';
     const FINAL_GREEN = '#6FE7DB';
-    const ARRAY_SIZE = 85;
 
     const calculateArraySize = () => {
         const width = window.innerWidth;
@@ -25,6 +25,20 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
 
         setArraySize(newSize);
     };
+
+    useEffect(() => {
+        // Call initially to set the size
+        calculateArraySize();
+        
+        // Listen for resize events
+        window.addEventListener('resize', calculateArraySize);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', calculateArraySize);
+        };
+
+    }, []); // Empty dependency array so this runs once on mo
 
    
     useEffect(() => {
@@ -64,7 +78,14 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
     // }, [setHideButton]);
 
     useEffect(() => {
-        resetArray();
+        // Your existing code here...
+        
+        // Call resetArray using the dynamic array size
+        resetArray(arraySize);
+    }, [arraySize]); // Now this runs whenever arraySize changes
+
+    useEffect(() => {
+        resetArray(arraySize);
 
         setTimeout(() => {
             const arrayBars = document.getElementsByClassName('arrayBar');
@@ -75,9 +96,9 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
       
     }, [newArray]);
 
-    function resetArray() {
+    function resetArray(size) {
         const newArray = [];
-        for (let i = 0; i < ARRAY_SIZE; i++) {
+        for (let i = 0; i < size; i++) {
             newArray.push(randomIntFromInterval(5, 600));
         }
         setArray(newArray);
@@ -265,7 +286,7 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
 
     return (
         <div className='leftContainer'>
-            <div className="arrayContainer"  style={{gridTemplateColumns: `repeat(${ARRAY_SIZE}, 1fr)`}}>
+            <div className="arrayContainer"  style={{gridTemplateColumns: `repeat(${arraySize}, 1fr)`}}>
                 {array.map((value, idx) => (
                     <div  className="arrayBar" key={idx} style={{ height: value + 'px' }}>
                     </div>
