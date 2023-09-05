@@ -11,6 +11,21 @@ export default function SortingVisualizer({selectedAlgorithm , sortButton , setS
     const FINAL_GREEN = '#6FE7DB';
     const ARRAY_SIZE = 85;
 
+    const calculateArraySize = () => {
+        const width = window.innerWidth;
+        let newSize;
+        
+        if (width <= 600) {
+            newSize = 40; // Set your size for small screens
+        } else if (width <= 1024) {
+            newSize = 60; // Set your size for medium screens
+        } else {
+            newSize = 85; // Set your size for large screens
+        }
+
+        setArraySize(newSize);
+    };
+
    
     useEffect(() => {
         // console.log('now');
