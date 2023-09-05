@@ -1,3 +1,5 @@
+
+
 .leftContainer {
     display: grid;
     justify-items: center;
@@ -9,7 +11,7 @@
     display: grid;
     width: 70%;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(90,1fr);
+    grid-template-columns: repeat(85,1fr);
     justify-items: center;
     align-items: center;
     gap: 1px;
