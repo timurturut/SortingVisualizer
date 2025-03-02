@@ -5,9 +5,9 @@ import * as SortingAlgorithms from '../sortingAlgorithms/sortingAlgorithms';
 export default function SortingVisualizer({selectedAlgorithm , sortButton , setSortButton , newArray , setNewArray , setHideButton , sizeVal ,setSizeVal}) {
     const [array, setArray] = useState([]);
 
-    const PRIMARY_COLOR = '#EC53B0';
-    const SECONDARY_COLOR = '#FDE5EC' 
-    const THIRD_COLOR = '#FDE5EC';
+    const PRIMARY_COLOR = '#4093df';
+    const SECONDARY_COLOR = '#EC53B0'
+    const THIRD_COLOR = '#EC53B0';
     const FINAL_GREEN = '#6FE7DB';
     const [arraySize, setArraySize] = useState(85);  // default size is 85
 
